@@ -1,0 +1,20 @@
+{
+  "name": "eshop",
+  "version": "0.0.0",
+  "homepage": "https://github.com/d1001001/laravel-doctrine-boilerplate",
+  "authors": [
+    "Dan Pecher <dan.pecher@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "semantic-ui": "~1.6.2"
+  }
+}

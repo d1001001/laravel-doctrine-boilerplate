@@ -40,7 +40,7 @@ class DoctrineGeneratorCommand extends Command {
 	public function fire()
 	{
 		$entity = $this->argument('entityName');
-		$meta = new ClassMetadataInfo('User');
+		$meta = new ClassMetadataInfo($entity);
 		$meta->setIdGeneratorType(ClassMetadataInfo::GENERATOR_TYPE_AUTO);
 		$meta->mapField(['fieldName' => 'id', 'type' => 'integer', 'id' => true]);
 		$meta->setPrimaryTable( ['name' => strtolower($entity) . 's'] );

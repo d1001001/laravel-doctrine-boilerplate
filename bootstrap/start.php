@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('dans-mac', 'Dans-Mac.local'),
+	'local' => array('dans-mac', 'Dans-Mac.local', 'Dans-Mac'),
 
 ));
 

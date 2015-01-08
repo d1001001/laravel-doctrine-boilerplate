@@ -26,6 +26,24 @@ class AppProvider extends ServiceProvider {
         $this->setupViews();
     }
 
+    public function boot()
+    {
+        $this->view = $this->app->make('view');
+        $this->router = $this->app->make('router');
+        $this->blade = $this->app->make('blade.compiler');
+        $frontPath = app_path('Frontend/');
+        $backPath = app_path('Backend/');
+//        $this->view->addLocation(__DIR__.'/Frontend/views');
+
+        $this->view->addNamespace('backend', $backPath . 'views');
+        $this->view->addNamespace('frontend', $frontPath . 'views');
+        require $backPath . 'routes.php';
+        require $backPath . 'filters.php';
+        require $frontPath . 'routes.php';
+        require $frontPath . 'filters.php';
+        require app_path('blade_extensions.php');
+    }
+
     private function setupControllers()
     {
         $services = $this->controllerServices;
